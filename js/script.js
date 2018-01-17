@@ -1,9 +1,28 @@
-new Vue({
+Vue.component('nota', {
+    props: ['titulonota', 'textonota','index'],
+    template: `
+    <div class="nota" >
+        <p class="tituloTarea">{{ titulonota }}</p>
+        <p class="textoTarea">{{ textonota }}</p>
+        <div class="containerButton">
+            <button class="btnBorrar" v-on:click="borrarNota(index)">Borrar
+                <figure class="backgroundEfect"></figure>
+            </button>
+        </div>
+    </div>
+    `,
+    methods: {
+        borrarNota: function (indice) {
+            instanceVue.notas.splice(indice, 1);
+        }
+    }
+});
+
+let instanceVue = new Vue({
     el: '#main',
     data: {
-        tituloNota: '',
-        textoNota: '',
-        errorForm: '',
+        tituloNotaACrear: '',
+        textoNotaACrear: '',
         textoBusqueda: '',
         notas: [{
             tituloNota: 'Preparar Symana 2017-18',
@@ -20,27 +39,25 @@ new Vue({
         nuevaNota: function () {
             if (this.checkTituloNota &&  this.checkTextoNota) {
                 this.notas.push({
-                    tituloNota: this.tituloNota,
-                    textoNota: this.textoNota
+                    tituloNotaACrear: this.tituloNota,
+                    textoNotaACrear: this.textoNota
                 });
                 this.borrarFormulario();
             }
 
         },
         borrarFormulario: function () {
-            this.tituloNota = '';
-            this.textoNota = '';
-        },
-        borrarNota: function (indice) {
-            this.notas.splice(indice, 1);
+            this.tituloNotaACrear = '';
+            this.textoNotaACrear = '';
         }
+
     },
     computed: {
         checkTituloNota: function () {
-            return this.tituloNota != '';
+            return this.tituloNotaACrear != '';
         },
         checkTextoNota: function () {
-            return this.textoNota != '';
+            return this.textoNotaACrear != '';
         },
         buscarNotas: function () {
             return this.notas.filter(elemento => elemento.tituloNota.toLowerCase().includes(this.textoBusqueda.toLowerCase()));
