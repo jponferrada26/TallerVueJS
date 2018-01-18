@@ -1,6 +1,8 @@
 ## Taller Vue js - sysmana 2018
 
-![Con titulo](images/Vue.js_Logo.png "Vue js")
+<center>
+[Con titulo](images/Vue.js_Logo.png "Vue js")
+</center>
 
 ### Requerimientos:
 
