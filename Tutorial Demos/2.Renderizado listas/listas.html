@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo listas</title>
+</head>
+<body>
+
+        <main>
+            
+                <hr>
+
+                <b>Tu lista de la compra contiene: (Con array de string)</b>
+                <ul>
+                    <!-- Podemos usar la directiva v-for, para recorrer los valores de un array -->
+                    <li v-for="producto in listaCompra">
+                        {{ producto }} <!-- Hacemos la interpolación, para cada producto contenido dentro del array listaCompra -->
+                    </li>
+                </ul>
+
+                <hr>
+
+                <b>Tu lista de la compra contiene: (Con array de objetos)</b>
+                <ul>
+                    <li v-for="producto in listaCompraObj">
+                        {{ producto.nombre }} <!-- Hacemos la interpolación, accediendo en este caso, a los campos del objeto --> 
+                      , {{ producto.precio }} 
+                    </li>
+                </ul>
+
+                <hr>
+
+                <b>Tu lista de la compra contiene: (Con array de objetos, mostrando indice)</b>
+                <ul>
+                    <li v-for="(producto,index) in listaCompraObj">
+                        {{ index }}. <!-- Hacemos la interpolación, accediendo al indice de cada objeto del array --> 
+                        {{ producto.nombre }} 
+                      , {{ producto.precio }} 
+                    </li>
+                </ul>
+
+                <hr>
+
+                <!-- Podemos mostrar los datos del modelo con la siguiente estructura -->
+                <pre> {{ $data }}</pre>
+
+        </main>
+
+    <!-- Añadimos los archivos javascript, el primero es para poder usar vue js, y el segundo es el archivo javascript donde trabajaremos con vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="listas.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Javier Ponferrada López">
+    <meta name="author" content="Jesus Mejias Leiva">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Gestor de Notas</title>
+</head>
+
+<body>
+    <main id="main">
+        <section id="containerForm">
+            <p id="titleGestorNotas">Gestor de notas</p>
+            <div id="containerInsideForm">
+                <p class="titleInput">Buscar nota</p>
+                <div class="containerInput">
+                    <input id="buscar" v-model="textoBusqueda" type="text" placeholder="Buscar">
+                </div>
+                <div id="containerCreateform">
+                    <figure class="bar_division"></figure>
+                    <p class="titleInput">Crear nota</p>
+                    <div class="containerInput">
+                        <input id="titulo" v-on:keyup.enter="nuevaNota()" type="text" v-model="tituloNotaACrear" placeholder="Título">
+                        <img v-if="!checkTituloNota" class="errorForm" src="img/warning.svg" title="Titulo vacío">
+                    </div>
+                    <div class="containerInput">
+                        <textarea name="texto" id="inputTexto" v-on:keyup.enter="nuevaNota()" v-model="textoNotaACrear" placeholder="Texto"></textarea>
+                        <img v-if="!checkTextoNota" class="errorForm" src="img/warning.svg" title="Texto vacío">
+                    </div>
+                    <button id="buttonCrear" v-on:click="nuevaNota()">Crear</button>
+                </div>
+            </div>
+            <p id="infoAutores">Diseñado y desarrollado <br/>por <a class="enlaceInfo" href="https://github.com/jponferrada26" target="_blank">jponferrada26</a> y <a href="https://github.com/susomejias" class="enlaceInfo" target="_blank">susomejias</a></p>
+        </section>
+        <section id="sectionViewNotas">
+            <div id="containerViewNotas">
+               <nota v-for="(nota,index) in buscarNotas"
+                    :key="index"
+                    :titulonota="nota.tituloNota"
+                    :textonota="nota.textoNota"
+                    :index="index">
+               </nota>
+            </div>
+        </section>
+    </main>
+    <script src="js/vue2.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
