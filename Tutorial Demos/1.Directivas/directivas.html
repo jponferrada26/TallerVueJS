@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo Directivas</title>
+</head>
+<body>
+
+        <main>
+                <!-- v-show, hace display none del elemento, si su valor es false -->
+                <h1 v-show="muestraVshow">Soy la directiva v-show</h1>
+
+                <!-- v-if,v-else-if  elimina el elemento del DOM, si su valor es false -->
+                <h1 v-if="muestraVif">Soy la directiva v-if</h1>
+
+                <!-- Podemos crear también estructuras complejas con if, else if y else -->
+                <!-- Para "traer" el valor de una variable, usamos la interpolacion {{ nombreVariable }} -->
+                <h1 v-if=" edad > 18 && muestraEdad">Tienes {{ edad }} años, eres mayor de edad</h1>
+                <h1 v-else-if="edad < 18 && muestraEdad">Tienes {{ edad }} años, eres menor de edad</h1>
+
+                <!-- Podemos crear un template con un v-if, para mostrar u ocultar varios elemento asi ahorramos escribir un v-if por cada elemento-->
+                <template v-if="template">
+                    <h1>Hola, soy un h1 de template</h1>
+                    <h1>Hola, soy otro h1 de template</h1>
+                </template>
+
+                <!-- Podemos mostrar los datos del modelo con la siguiente estructura -->
+                <pre> {{ $data }}</pre>
+
+        </main>
+
+    <!-- Añadimos los archivos javascript, el primero es para poder usar vue js, y el segundo es el archivo javascript donde trabajaremos con vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="directivas.js"></script>
+</body>
+</html>
