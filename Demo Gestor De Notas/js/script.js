@@ -1,5 +1,5 @@
 Vue.component('nota', {
-    props: ['titulonota', 'textonota','index'],
+    props: ['titulonota', 'textonota', 'index'],
     template: `
     <div class="nota" >
         <p class="tituloTarea">{{ titulonota }}</p>
@@ -39,10 +39,11 @@ let instanceVue = new Vue({
         nuevaNota: function () {
             if (this.checkTituloNota &&  this.checkTextoNota) {
                 this.notas.push({
-                    tituloNotaACrear: this.tituloNota,
-                    textoNotaACrear: this.textoNota
+                    tituloNota: this.tituloNotaACrear,
+                    textoNota: this.textoNotaACrear
                 });
                 this.borrarFormulario();
+
             }
 
         },
