@@ -1,0 +1,52 @@
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-family: roboto;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  background: #FF5C5C;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+  display: block;
+  padding: 20px 30px;
+  color: #FFF;
+  transition: all 0.5s;
+}
+
+nav ul li a:hover {
+  background: #EB5252;
+}
+
+main #containerMain {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+main #containerMain p {
+  font-size: 3rem;
+  color: #EB5252;
+}
+
+.activo {
+  background: #EB5252;
+}

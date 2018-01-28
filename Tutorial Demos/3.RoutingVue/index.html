@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/vue2.js"></script>
+    <script src="js/vue-router.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Demo Routing Vuejs</title>
+</head>
+
+<body>
+    <div id="containerAll">
+        <nav>
+            <ul>
+                <li>
+                    <router-link class="" to="/" active-class="activo" exact>Inicio</router-link> <!--Crear un link la ruta deseada-->
+                </li>
+                <li>
+                    <router-link class="" to="/sobreMi" active-class="activo" exact>Sobre mi</router-link> 
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <div id="containerMain">
+                <router-view></router-view> <!--Mostramos la vista de la ruta-->
+            </div>
+
+        </main>
+    </div>
+</body>
+<script src="js/script.js"></script>
+
+</html>
