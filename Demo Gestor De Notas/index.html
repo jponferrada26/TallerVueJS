@@ -40,10 +40,11 @@
         <section id="sectionViewNotas">
             <div id="containerViewNotas">
                <nota v-for="(nota,index) in buscarNotas"
-                    :key="index"
-                    :titulonota="nota.tituloNota"
-                    :textonota="nota.textoNota"
-                    :index="index">
+                    v-bind:key="index"
+                    v-bind:titulonota="nota.tituloNota"
+                    v-bind:textonota="nota.textoNota"
+                    v-bind:index="index"
+                    v-bind:notas="notas">
                </nota>
             </div>
         </section>

@@ -1,0 +1,62 @@
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  font-family: roboto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-flow: column;
+}
+
+button {
+  margin: 10px 0px;
+  padding: 10px 20px;
+  background: #000;
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+button:focus {
+  outline: none;
+}
+
+button, #inputText {
+  border-radius: 3px;
+}
+
+#inputText {
+  padding: 10px 10px;
+  width: 40%;
+  border: none;
+  color: #FFF;
+  text-align: center;
+}
+
+#inputText:focus {
+  outline: none;
+}
+
+.class1 {
+  background: #41b883;
+}
+
+.class2 {
+  background: #67dbf9;
+}

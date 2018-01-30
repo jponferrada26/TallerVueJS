@@ -1,5 +1,5 @@
 Vue.component('nota', {
-    props: ['titulonota', 'textonota', 'index'],
+    props: ['titulonota', 'textonota', 'index','notas'],
     template: `
     <div class="nota" >
         <p class="tituloTarea">{{ titulonota }}</p>
@@ -13,12 +13,12 @@ Vue.component('nota', {
     `,
     methods: {
         borrarNota: function (indice) {
-            instanceVue.notas.splice(indice, 1);
+            this.notas.splice(indice, 1);
         }
     }
 });
 
-let instanceVue = new Vue({
+new Vue({
     el: '#main',
     data: {
         tituloNotaACrear: '',
