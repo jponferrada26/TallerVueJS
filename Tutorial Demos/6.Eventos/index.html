@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/vue2.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Demo Eventos</title>
+
+</head>
+
+<body>
+    <main>
+        <h1>Demo Eventos</h1>
+        <button v-on:click="clickButton">Púlsame</button>
+        <div id="containerDemos">
+            <div id="containerInsideDemos">
+                <div v-for="(element, index) in arrayElementos" v-on:mouseover="deleteHover(index)" class="containerDemo">
+                    <p>Pasa por encima mía.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<script src="js/script.js"></script>
+
+</html>
