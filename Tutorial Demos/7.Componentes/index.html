@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Demo Componentes Vuej.js</title>
+</head>
+<body>
+    <main>
+
+        <div id="tituloDemo">
+            <h1>Demo Componentes</h1>
+        </div>
+
+        <div id="containerInput">
+            <b>Introduce el número de tarjetas a crear : </b>
+            <!-- Hacemos un input, con un model para obtener el valor en caliente del input -->
+            <input type="number" name="entrada" v-model="numtarjetas"> 
+        </div>
+        
+
+        <div id="containerCards">
+            <!-- Creamos el componente card-material, y recorremos con un for, teniendo como limite el valor del input -->
+            <card-material v-for="(i,index) in  numtarjetas * 1" :key="index" class="card">
+            </card-material>
+        </div>
+
+    </main>
+</body>
+<script src="js/vue2.js"></script>
+<script src="js/script.js"></script>
+</html>
